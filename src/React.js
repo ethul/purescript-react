@@ -94,19 +94,19 @@ function createClass(spec) {
         state: spec.getInitialState(this)()
       };
     },
-    componentWillMount: function(){
+    UNSAFE_componentWillMount: function(){
       return spec.componentWillMount(this)();
     },
     componentDidMount: function(){
       return spec.componentDidMount(this)();
     },
-    componentWillReceiveProps: function(nextProps){
+    UNSAFE_componentWillReceiveProps: function(nextProps){
       return spec.componentWillReceiveProps(this)(nextProps)();
     },
     shouldComponentUpdate: function(nextProps, nextState){
       return spec.shouldComponentUpdate(this)(nextProps)(nextState.state)();
     },
-    componentWillUpdate: function(nextProps, nextState){
+    UNSAFE_componentWillUpdate: function(nextProps, nextState){
       return spec.componentWillUpdate(this)(nextProps)(nextState.state)();
     },
     componentDidUpdate: function(prevProps, prevState){
